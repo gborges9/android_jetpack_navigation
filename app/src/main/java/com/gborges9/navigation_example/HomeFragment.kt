@@ -18,7 +18,9 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.navigate_to_page_btn).setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_pageFragment)
+            val homeToPageAction = HomeFragmentDirections
+                .actionHomeFragmentToPageFragment("Hello world!")
+            findNavController().navigate(homeToPageAction)
         }
     }
 }
